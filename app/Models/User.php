@@ -35,6 +35,14 @@ class User extends Authenticatable
     ];
 
     /**
+     * Add a mutator to ensure hashed passwords
+     */
+    public function setPasswordAttributes($password)
+    {
+        $this->attributes[$password] = bcrypt($password);
+    }
+
+    /**
      * The attributes that should be cast.
      *
      * @var array
