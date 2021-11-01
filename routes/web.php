@@ -19,4 +19,13 @@ Route::get('/', function () {
 Route::fallback(function () {
     return view('welcome');
 });
-Route::post('/register', 'UserController@store');
+
+// Auth::routes();
+
+Route::get('users', function () {
+    return 'Users!';
+});
+
+ Route::post('/register', 'App\HTTP\Controllers\UserController@store');
+// Route::post('register', [UserController::class, 'store']);
+//Route::post('/register', 'UserController@store');
