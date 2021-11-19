@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,10 +23,7 @@ Route::fallback(function () {
 
 // Auth::routes();
 
-Route::get('users', function () {
-    return 'Users!';
-});
-
- Route::post('/register', 'App\HTTP\Controllers\UserController@store');
-// Route::post('register', [UserController::class, 'store']);
+// Route::post('/register', 'App\HTTP\Controllers\UserController@store');
 //Route::post('/register', 'UserController@store');
+//Route::get('/users/', [UserController::class, 'store'])->middleware(['auth']);
+Route::post('/register', [UserController::class, 'store'])->middleware(['auth']);

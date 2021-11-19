@@ -3,16 +3,11 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| API Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register API routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| is assigned the "api" middleware group. Enjoy building your API!
-|
-*/
+Route::get('/snippets', [\App\Http\Controllers\API\SnippetController::class, 'index']);
+Route::post('/create-snippet', [\App\Http\Controllers\API\SnippetController::class, 'store']);
+Route::get('/edit-snippet/{id}', [\App\Http\Controllers\API\SnippetController::class, 'edit']);
+Route::put('/update-snippet/{id}', [\App\Http\Controllers\API\SnippetController::class, 'update']);
+Route::delete('/delete-snippet/{id}', [\App\Http\Controllers\API\SnippetController::class, 'destroy']);
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();

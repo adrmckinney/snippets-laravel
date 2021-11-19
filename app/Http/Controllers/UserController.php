@@ -23,14 +23,14 @@ class UserController extends Controller
             'password' => bcrypt(request()->input('password'))
         ]);
 
-        // $user = User::create(request(['first_name', 'last_name', 'email', 'password']));
+//         $user = User::create(request(['first_name', 'last_name', 'email', 'password']));
 
         $user->save();
 
-        // auth()->login($user);
+//         auth()->login($user);
 
         return response()->json([
-            'messsage' => 'user successfully created!'
-        ], 201);
+                'messsage' => 'user successfully created!'
+            ], 201);
     }
 }
