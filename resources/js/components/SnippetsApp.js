@@ -9,7 +9,7 @@ function SnippetsApp() {
                     <div className="card">
                         <div className="card-header">Snippets App Component</div>
 
-                        <div className="card-body">I'm an example component!</div>
+                        <div className="card-body">I'm the back end!</div>
                     </div>
                 </div>
             </div>

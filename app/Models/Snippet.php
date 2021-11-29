@@ -14,10 +14,10 @@ class Snippet extends Model
     protected $table = 'snippets';
     protected $fillable = [
         'author',
-        'name',
+        'title',
         'snippet',
         'description',
         'language',
-        'style',
+        'theme',
     ];
 }

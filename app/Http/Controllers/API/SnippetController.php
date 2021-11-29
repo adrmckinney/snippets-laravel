@@ -23,11 +23,11 @@ class SnippetController extends Controller
     {
         $snippet = new Snippet;
         $snippet->author = $request->input('author');
-        $snippet->name = $request->input('name');
+        $snippet->title = $request->input('title');
         $snippet->snippet = $request->input('snippet');
         $snippet->description = $request->input('description');
         $snippet->language = $request->input('language');
-        $snippet->style = $request->input('style');
+        $snippet->theme = $request->input('theme');
         $snippet->save();
 
         return response()->json([
@@ -50,11 +50,11 @@ class SnippetController extends Controller
     {
         $snippet = Snippet::find($id);
         $snippet->author = $request->input('author');
-        $snippet->name = $request->input('name');
+        $snippet->title = $request->input('title');
         $snippet->snippet = $request->input('snippet');
         $snippet->description = $request->input('description');
         $snippet->language = $request->input('language');
-        $snippet->style = $request->input('style');
+        $snippet->theme = $request->input('theme');
         $snippet->update();
 
         return response()->json([
@@ -73,5 +73,4 @@ class SnippetController extends Controller
             'message' => 'Snippet successfully deleted'
         ]);
     }
-
 }
