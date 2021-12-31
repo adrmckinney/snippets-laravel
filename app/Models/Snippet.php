@@ -11,6 +11,10 @@ class Snippet extends Model
 {
     use HasApiTokens, HasFactory;
 
+    protected $casts = [
+        'description' => 'array',
+    ];
+
     protected $table = 'snippets';
     protected $fillable = [
         'author',

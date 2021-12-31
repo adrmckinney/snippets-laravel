@@ -21,11 +21,13 @@ class SnippetController extends Controller
 
     public function store(Request $request)
     {
+
         $snippet = new Snippet;
+
         $snippet->author = $request->input('author');
         $snippet->title = $request->input('title');
         $snippet->snippet = $request->input('snippet');
-        $snippet->description = $request->input('description');
+        $snippet->description = $request->post('description');
         $snippet->language = $request->input('language');
         $snippet->theme = $request->input('theme');
         $snippet->save();
