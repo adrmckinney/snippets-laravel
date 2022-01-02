@@ -21,7 +21,7 @@ return [
 
     'allowed_origins' => ['*'],
 
-    'allowed_origins_patterns' => [],
+    'allowed_origins_patterns' => ['https://mckinneysnippets.netlify.app/', 'http://localhost:3000/'],
 
     'allowed_headers' => ['*'],
 
