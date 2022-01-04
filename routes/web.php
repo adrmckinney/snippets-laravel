@@ -26,4 +26,8 @@ Route::fallback(function () {
 // Route::post('/register', 'App\HTTP\Controllers\UserController@store');
 //Route::post('/register', 'UserController@store');
 //Route::get('/users/', [UserController::class, 'store'])->middleware(['auth']);
-Route::post('/register', [UserController::class, 'store'])->middleware(['auth']);
+Route::post('/register', [\App\HTTP\Controllers\UserController::class, 'store'])->middleware(['auth']);
+Route::post('/login', [\App\HTTP\Controllers\LoginController::class, 'doLogin']);
+// Route::get('/', function () {
+//     return view('login');
+// })->name('login');
